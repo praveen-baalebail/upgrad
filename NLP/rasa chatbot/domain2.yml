@@ -1,0 +1,76 @@
+session_config:
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: true
+intents:
+- restaurant_search
+- affirm
+- greet
+- goodbye
+- stop
+- deny
+entities:
+- cuisine
+- email
+- location
+- people
+- price
+slots:
+  cuisine:
+    type: text
+  email:
+    type: text
+  emailbody:
+    type: text
+  loc_avl:
+    type: bool
+  location:
+    type: text
+  price:
+    type: text
+  rest_found:
+    type: bool
+responses:
+  utter_ask_budget:
+  - buttons:
+    - payload: low
+      title: Lesser than Rs. 300
+    - payload: medium
+      title: Rs. 300 to 700
+    - payload: high
+      title: More than 700
+    text: What's the average budget for two people?
+  utter_ask_cuisine:
+  - text: "What kind of cuisine would you prefer?\n- Chinese\n- Mexican\n- Italian\n- American\n- South Indian\n- North Indian\n"
+  utter_ask_howcanhelp:
+  - text: how can I help you?
+  utter_ask_location:
+  - text: Please provide the city name.
+  utter_default:
+  - text: i cannot understand
+  utter_goodbye:
+  - text: goodbye :(
+  - text: Bye-bye
+  utter_greet:
+  - text: hey there! How may i help you
+  - text: Hi, How can I help you!
+  - text: Hey, How is it going. How May I help you Today
+  utter_email_conf:
+  - text: "\n- Should I send you details of all the restaurants on email?"
+  utter_email_id_ask:
+  - text: To what email id should I send it to?
+  utter_email_sent:
+  - text: email sent. Bon Appetit!
+actions:
+- action_chklocation
+- action_search_restaurants
+- action_sendemail
+- utter_ask_budget
+- utter_ask_cuisine
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_default
+- utter_email_conf
+- utter_email_id_ask
+- utter_email_sent
+- utter_goodbye
+- utter_greet
